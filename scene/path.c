@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   path.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbenjy <jbenjy@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:21:38 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/03/24 17:56:04 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 20:05:05 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int     check_dist(char *str)
+static int     check_dist(char *str)
 {
     if(str[0] == 'N' && str[1] == 'O')
         return (1);
@@ -25,27 +25,41 @@ int     check_dist(char *str)
     return (5);
 }
 
-void    parse_path(t_global *global, char *str, int place)
+static void    parse_path(t_global *global, char *str, int place)
 {
     if(place == 1)
-        global->scene.path_north = ft_strdup(str);
+        global->scene.path_north.directory = ft_strdup(str);
     if(place == 2)
-        global->scene.path_south = ft_strdup(str);
+        global->scene.path_south.directory = ft_strdup(str);
     if(place == 3)
-        global->scene.path_west = ft_strdup(str);
+        global->scene.path_west.directory = ft_strdup(str);
     if(place == 4)
-        global->scene.path_east = ft_strdup(str);
+        global->scene.path_east.directory = ft_strdup(str);
     if(place == 5)
-        global->scene.path_sprite = ft_strdup(str);
+        global->scene.path_sprite.directory = ft_strdup(str);
 }
 
-void    create_path(char *str,  t_global *global)
+void            check_number_arg(char **line, int num, int error)
+{
+    int count;
+
+    count = 0;
+    while (line[count])
+        count++;
+    
+    if (count != num)
+        error_handle(error);
+}
+
+void            create_path(char *str,  t_global *global)
 {
     char **line;
-
+    
     if(!(line = ft_split(str, ' ')))
         error_handle(ERROR_ALLOCATE);
     
+    check_number_arg(line, 2, ERROR_PATH);
+
     if(!line[0] || !line[1])
         error_handle(ERROR_PATH);    
     

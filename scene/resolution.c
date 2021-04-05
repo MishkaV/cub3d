@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   resolution.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbenjy <jbenjy@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:48:41 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/03/24 17:23:14 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 19:28:28 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,13 @@ void    create_res(char *str,  t_global *global)
     if(!(line = ft_split(str + 2, ' ')))
         error_handle(ERROR_ALLOCATE);
     
+    check_number_arg(line, 2, ERROR_RES);
+    
     if(!line[0] || !line[1] || !check_num(line[0]) || !check_num(line[1]))
         error_handle(ERROR_RES);    
     
-    global->scene.res = create_vector(ft_atoi(line[0]), ft_atoi(line[1]));
+    global->scene.res.x = ft_atoi(line[0]);
+    global->scene.res.y = ft_atoi(line[1]);
     global->scene.res.x = abs(global->scene.res.x) > MAX_X ? MAX_X : global->scene.res.x;
     global->scene.res.x = abs(global->scene.res.x) < MIN_X ? MIN_X : global->scene.res.x;
     global->scene.res.y = abs(global->scene.res.y) > MAX_Y ? MAX_Y : global->scene.res.y;

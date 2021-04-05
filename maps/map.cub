@@ -1,9 +1,12 @@
-R 1920 1080 
+R 1920 1080
 NO ./path_north
 EA ./path_east
 WE ./path_west
 SO ./path_south
 S ./path_sprite
-F 1 87 0
-C 0 3 4
+F 1,87,0
+C 0,3,4 
 
+
+
+Hello

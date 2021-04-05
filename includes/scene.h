@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbenjy <jbenjy@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:36:36 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/03/24 16:06:52 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 18:25:36 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # define MIN_Y  360
 
 
-void    create_scene(char *file, t_global *global);
+void    scene_create(char *file, t_global *global);
 
 #endif
