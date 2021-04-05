@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:24:04 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 20:05:49 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:20:48 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int			check_insert_gl(t_global *global)
 {
-	return(global->scene.res.x >= 0
-	&& global->scene.res.y >= 0
+	return(global->mlx_data.width >= 0
+	&& global->mlx_data.height >= 0
 	&& global->scene.color_ceil >= 0
 	&& global->scene.color_floor >= 0
 	&& global->scene.path_east.directory

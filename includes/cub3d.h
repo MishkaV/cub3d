@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:25:26 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 20:02:59 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:20:11 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ typedef struct  s_vector
     int         y;
 }               t_vector;
 
+typedef struct  s_map
+{
+    char        *map;
+    int         width;
+    int         height;
+}               t_map;
+
+
+
 
 typedef struct  s_mlx_data
 {
@@ -36,6 +45,7 @@ typedef struct  s_mlx_data
     void        *window;
     int         width;
     int         height;
+    char        *map;
 }               t_mlx_data;
 
 typedef struct  s_image
@@ -50,7 +60,6 @@ typedef struct  s_image
 
 typedef struct  s_scene
 {
-    t_vector    res;
     int         color_floor;
     int         color_ceil;
     t_image     path_west;
