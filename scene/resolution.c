@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:48:41 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:22:09 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:42:38 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void    create_res(char *str,  t_global *global)
     char **line;
 
     if(!(line = ft_split(str + 2, ' ')))
-        error_handle(ERROR_ALLOCATE);
+        error_handle(ERROR_ALLOCATE, global);
     
     check_number_arg(line, 2, ERROR_RES);
     
     if(!line[0] || !line[1] || !check_num(line[0]) || !check_num(line[1]))
-        error_handle(ERROR_RES);    
+        error_handle(ERROR_RES, global);    
     
     global->mlx_data.width = ft_atoi(line[0]);
     global->mlx_data.height = ft_atoi(line[1]);

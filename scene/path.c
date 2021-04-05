@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:21:38 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 20:05:05 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:39:41 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void    parse_path(t_global *global, char *str, int place)
         global->scene.path_sprite.directory = ft_strdup(str);
 }
 
-void            check_number_arg(char **line, int num, int error)
+void            check_number_arg(char **line, int num, int error, t_global *global)
 {
     int count;
 
@@ -48,20 +48,20 @@ void            check_number_arg(char **line, int num, int error)
         count++;
     
     if (count != num)
-        error_handle(error);
+        error_handle(error, global);
 }
 
-void            create_path(char *str,  t_global *global)
+void            create_path(char *str, t_global *global)
 {
     char **line;
     
     if(!(line = ft_split(str, ' ')))
-        error_handle(ERROR_ALLOCATE);
+        error_handle(ERROR_ALLOCATE, global);
     
-    check_number_arg(line, 2, ERROR_PATH);
+    check_number_arg(line, 2, ERROR_PATH, global);
 
     if(!line[0] || !line[1])
-        error_handle(ERROR_PATH);    
+        error_handle(ERROR_PATH, global);    
     
     parse_path(global, line[1], check_dist(line[0]));
     split_free(line);

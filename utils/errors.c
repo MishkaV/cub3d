@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:07:05 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 18:26:06 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:38:08 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void		put_error(int error)
 
 }
 
-
 int			cub_check(char *str)
 {
 	int len;
@@ -39,13 +38,32 @@ int			cub_check(char *str)
 	len = ft_strlen(str);
 	if (len < 5)
 		return (0);
-	if(!ft_strncmp(str + len - 4, ".cub", 5))
+	if (!ft_strncmp(str + len - 4, ".cub", 5))
 		return (1);
 	return (0);
 }
 
-void		error_handle(int error)
+void		free_arguments(t_global *global)
+{
+	if (global->scene.path_east.directory)
+		free(global->scene.path_east.directory);
+
+	if (global->scene.path_west.directory)
+		free(global->scene.path_west.directory);
+
+	if (global->scene.path_north.directory)
+		free(global->scene.path_north.directory);
+
+	if (global->scene.path_south.directory)
+		free(global->scene.path_south.directory);
+		
+	if (global->scene.path_sprite.directory)
+		free(global->scene.path_sprite.directory);
+}
+
+void		error_handle(int error, t_global *global)
 {
 	put_error(error);
+	free_arguments(global);
     exit(error);
 }

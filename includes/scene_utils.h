@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:27:24 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 19:51:38 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:42:02 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 int         check_insert_gl(t_global *global);
 void        line_parse(char *str, t_global *global);
-char		*trim_file(int fd);
+char		*trim_file(int fd, t_global *global);
 void		map_create(char *str, int file);
 #endif

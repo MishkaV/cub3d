@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:01:09 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:23:13 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:40:43 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int			main(int argc, char **argv)
     t_global global;
     
     init_global(&global);
-    arg_checker(argc, argv);
+    arg_checker(argc, argv, &global);
     scene_create(argv[1], &global);
     
     printf("Res: x = %d, y = %d\n", global.mlx_data.width, global.mlx_data.height);

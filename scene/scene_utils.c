@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:24:04 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:20:48 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:38:58 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void		line_parse(char *str, t_global *global)
 	else if (check_insert_gl(global))
 		return ;
 	else 
-		error_handle(ERROR_ARG);
+		error_handle(ERROR_ARG, global);
 }
 
-char		*trim_file(int fd)
+char		*trim_file(int fd, t_global *global)
 {
 	char	*str;
 	int		file;
@@ -49,18 +49,18 @@ char		*trim_file(int fd)
 	str = 0;
 	file = get_next_line(fd, &str);
 	if (file <= 0)
-		error_handle(ERROR_READ);
+		error_handle(ERROR_READ, global);
 	while (!str[0])
 	{
 		free(str);
 		file = get_next_line(fd, &str);
 		if (file <= 0)
-			error_handle(ERROR_CONFIG);
+			error_handle(ERROR_CONFIG, global);
 	}
 	return (str);
 }
 
 // void		map_create(char *str, int file)
 // {
-	
+
 // }
