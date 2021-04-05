@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_utils.h                                      :+:      :+:    :+:   */
+/*   create_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 18:27:24 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:51:16 by jbenjy           ###   ########.fr       */
+/*   Created: 2021/04/05 21:48:41 by jbenjy            #+#    #+#             */
+/*   Updated: 2021/04/05 21:51:01 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCENE_UTILS_H
-# define SCENE_UTILS_H
+#include "cub3d.h"
 
-int         check_insert_gl(t_global *global);
-void        line_parse(char *str, t_global *global);
-char		*trim_file(int fd, t_global *global);
-#endif
+
+// void		map_create(char *str, int file)
+// {
+
+// }

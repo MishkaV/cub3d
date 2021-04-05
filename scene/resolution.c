@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:48:41 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:42:38 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:51:58 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void    create_res(char *str,  t_global *global)
     if(!(line = ft_split(str + 2, ' ')))
         error_handle(ERROR_ALLOCATE, global);
     
-    check_number_arg(line, 2, ERROR_RES);
+    check_number_arg(line, 2, ERROR_RES, global);
     
     if(!line[0] || !line[1] || !check_num(line[0]) || !check_num(line[1]))
         error_handle(ERROR_RES, global);    

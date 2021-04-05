@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:24:04 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:38:58 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:50:50 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,3 @@ char		*trim_file(int fd, t_global *global)
 	}
 	return (str);
 }
-
-// void		map_create(char *str, int file)
-// {
-
-// }

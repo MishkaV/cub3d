@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:25:26 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:20:11 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 21:50:03 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ typedef struct  s_map
     int         width;
     int         height;
 }               t_map;
-
-
 
 
 typedef struct  s_mlx_data
@@ -84,4 +82,5 @@ typedef struct  s_global
 # include "color.h" 
 # include "path.h"
 # include "scene_utils.h"
+# include "create_map.h"
 #endif
