@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 21:48:41 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 12:30:53 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 20:27:15 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void		map_create(char *str, int file, t_global *global)
 	max_len(list, global);
 	count_node(list, global);
 	make_array_map(list, global);
+	
 	print_map(global);
 	
 	free_list_map(list);

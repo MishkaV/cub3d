@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 10:05:45 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 12:38:19 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 20:26:29 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,20 +70,8 @@ void                check_mid(char *str, t_global *global, t_list_map *list)
     prev = get_last_str(list);
     while (i < (int)ft_strlen(str) && i < (int)ft_strlen(prev))
     {
-        count_node(list, global);
-        if (str[i] == '1')
-        {
-            // if (global->mlx_data.height == 2)
-            // {
-            //     if(prev[i] != '1' && prev[i] != ' ')
-            //         error_handle(ERROR_MAP_MID, global);
-            // }
-            // else
-            // {
-            //     if(prev[i] == '1' && prev[i] != ' ')
-            //         error_handle(ERROR_MAP_MID, global);
-            // }
-        }
+        if (prev[i] == ' ' && str[i] != '1' && str[i] != ' ')
+            error_handle(ERROR_MAP_MID, global);
         i++;
     }
 }
