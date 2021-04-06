@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:04:08 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 12:15:37 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 21:38:52 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define ERROR_MAP      8
 # define ERROR_MAP_MID  9
 # define ERROR_MAP_LAST 10
+# define ERROR_MLX_AL   11
+# define ERROR_TEXT_AL  12
 
 
 void		put_error(int error);

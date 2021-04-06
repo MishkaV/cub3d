@@ -6,28 +6,34 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:01:09 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 10:13:25 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 21:48:06 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void        init_global(t_global *global)
+void        init_mlx_data(t_global *global)
 {
-    global->mlx_data.width = -1;
-    global->mlx_data.height = -1;
+    int x;
+    int y;
     
-    global->scene.color_ceil = -1;
-    global->scene.color_floor = -1;
-    global->scene.path_east.directory = 0;
-    global->scene.path_north.directory = 0;
-    global->scene.path_south.directory = 0;
-    global->scene.path_west.directory = 0;
-    global->scene.path_sprite.directory = 0;
-    
-	global->mlx_data.map.data = 0;
-	global->mlx_data.map.height = 0;
-	global->mlx_data.map.width = 0; 
+    x = global->mlx_data.width;
+    y = global->mlx_data.height;
+    if (!(global->mlx_data.mlx = mlx_init()))
+        error_handle(ERROR_MLX_AL, global);
+        
+    global->mlx_data.window = mlx_new_window(global->mlx_data.mlx, x, y, "cub3D"); 
+    if (!global->mlx_data.window)
+        error_handle(ERROR_MLX_AL, global);
+}
+
+void        init_main_image(t_global *global)
+{
+    global->main_image.ptr = mlx_new_image(global->mlx_data.mlx, global->mlx_data.width, global->mlx_data.height);    
+    global->main_image.data = mlx_get_data_addr(global->main_image.ptr,
+    &global->main_image.bpp,
+    &global->main_image.size_line,
+    &global->main_image.endine);
 }
 
 int			main(int argc, char **argv)
@@ -38,6 +44,16 @@ int			main(int argc, char **argv)
     arg_checker(argc, argv, &global);
     scene_create(argv[1], &global);
     
+    init_player(&global);
+    init_mlx_data(&global);
+    init_texture(&global);
+    init_main_image(&global);
+    
+    floor_paint(&global);
+    ceil_paint(&global);
+
+    mlx_put_image_to_window(global.mlx_data.mlx, global.mlx_data.window, global.main_image.ptr, 0, 0);
+    
     printf("Res: x = %d, y = %d\n", global.mlx_data.width, global.mlx_data.height);
     printf("Color: floor = %d, ceil = %d\n", global.scene.color_floor, global.scene.color_ceil);
     printf("NO: %s\n", global.scene.path_north.directory);
@@ -46,5 +62,6 @@ int			main(int argc, char **argv)
     printf("WE: %s\n", global.scene.path_west.directory);;
     printf("S: %s\n", global.scene.path_sprite.directory);
     
+    mlx_loop(global.mlx_data.mlx);
 	return (0);
 }

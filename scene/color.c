@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:53:31 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:43:32 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 21:52:04 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void    parse_color(t_global *global, char **str, char place)
 {
     if(place == 'C')
         global->scene.color_ceil =
-            (ft_atoi(str[2]) | ft_atoi(str[1]) << 8 | ft_atoi(str[1]) << 16);
+            (ft_atoi(str[2]) | ft_atoi(str[1]) << 8 | ft_atoi(str[0]) << 16);
     else
         global->scene.color_floor =
-            (ft_atoi(str[2]) | ft_atoi(str[1]) << 8 | ft_atoi(str[1]) << 16);    
+            (ft_atoi(str[2]) | ft_atoi(str[1]) << 8 | ft_atoi(str[0]) << 16);    
 }
 
 void    create_color(char *str,  t_global *global)

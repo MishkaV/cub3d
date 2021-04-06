@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:07:05 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 12:17:00 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 21:43:42 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ void		put_error(int error)
 		ft_putstr_fd("Error: Bad data in .cub file(map - mid part)\n", 0);
 	if (error == ERROR_MAP_LAST)
 		ft_putstr_fd("Error: Bad data in .cub file(map - last string)\n", 0);
+	if (error == ERROR_MLX_AL)
+		ft_putstr_fd("Error: Bad allocation memory(mlx)\n", 0);
+	if (error == ERROR_TEXT_AL)
+		ft_putstr_fd("Error: Bad allocation memory(texture)\n", 0);
 }
 
 int			cub_check(char *str)
