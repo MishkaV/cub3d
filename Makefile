@@ -6,7 +6,7 @@
 #    By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 16:05:20 by jbenjy            #+#    #+#              #
-#    Updated: 2021/04/06 21:48:35 by jbenjy           ###   ########.fr        #
+#    Updated: 2021/04/06 22:07:15 by jbenjy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS			= $(DIR_SRCS)cub3d.c \
 				$(DIR_UTILS)checks_map.c \
 				$(DIR_UTILS)load_texture.c \
 				$(DIR_UTILS)inits.c \
+				$(DIR_UTILS)press_key.c \
 				$(DIR_SCENE)scene.c \
 				$(DIR_SCENE)scene_utils.c \
 				$(DIR_SCENE)resolution.c \

@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:01:09 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 21:48:06 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 22:22:18 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void        init_main_image(t_global *global)
     &global->main_image.endine);
 }
 
+
 int			main(int argc, char **argv)
 {
     t_global global;
@@ -51,16 +52,19 @@ int			main(int argc, char **argv)
     
     floor_paint(&global);
     ceil_paint(&global);
-
+    
     mlx_put_image_to_window(global.mlx_data.mlx, global.mlx_data.window, global.main_image.ptr, 0, 0);
     
-    printf("Res: x = %d, y = %d\n", global.mlx_data.width, global.mlx_data.height);
-    printf("Color: floor = %d, ceil = %d\n", global.scene.color_floor, global.scene.color_ceil);
-    printf("NO: %s\n", global.scene.path_north.directory);
-    printf("EA: %s\n", global.scene.path_east.directory);;
-    printf("SO: %s\n", global.scene.path_south.directory);;
-    printf("WE: %s\n", global.scene.path_west.directory);;
-    printf("S: %s\n", global.scene.path_sprite.directory);
+    mlx_hook(global.mlx_data.window, 2, 1, press_key, &global);
+    mlx_hook(global.mlx_data.window, 17, 0, press_close, &global);
+    
+    // printf("Res: x = %d, y = %d\n", global.mlx_data.width, global.mlx_data.height);
+    // printf("Color: floor = %d, ceil = %d\n", global.scene.color_floor, global.scene.color_ceil);
+    // printf("NO: %s\n", global.scene.path_north.directory);
+    // printf("EA: %s\n", global.scene.path_east.directory);;
+    // printf("SO: %s\n", global.scene.path_south.directory);;
+    // printf("WE: %s\n", global.scene.path_west.directory);;
+    // printf("S: %s\n", global.scene.path_sprite.directory);
     
     mlx_loop(global.mlx_data.mlx);
 	return (0);

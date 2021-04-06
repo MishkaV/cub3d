@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:04:08 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 21:38:52 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 22:10:12 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@
 void		put_error(int error);
 int			cub_check(char *str);
 void		error_handle(int error, t_global *global);
+void		free_arguments(t_global *global);
+
 #endif

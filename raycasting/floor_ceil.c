@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:34:36 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 21:47:20 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 22:21:06 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void        ceil_paint(t_global *global)
 		j = 0;
 		while(j < global->mlx_data.height/2)
 		{
-			dst = global->main_image.data + (j*global->main_image.size_line + i * (global->main_image.bpp / 8) );
+			dst = global->main_image.data + (j*global->main_image.size_line + i * (global->main_image.bpp / 8));
 			*(unsigned int*)dst = global->scene.color_ceil;
 			j++;
 		}

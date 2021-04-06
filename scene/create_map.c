@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 21:48:41 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 20:31:28 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 22:22:38 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,18 @@ void		make_array_map(t_list_map *list, t_global *global)
 	global->mlx_data.map.data = array;
 }
 
-void		print_map(t_global *global)
-{
+// void		print_map(t_global *global)
+// {
 	
-	for(int i = 0; i < global->mlx_data.map.height; i++)
-	{
-		for(int j = 0; j < global->mlx_data.map.width; j++)
-		{
-			printf("%c", global->mlx_data.map.data[j + i * global->mlx_data.map.width]);
-		}
-		printf("\n");
-	}
-}
+// 	for(int i = 0; i < global->mlx_data.map.height; i++)
+// 	{
+// 		for(int j = 0; j < global->mlx_data.map.width; j++)
+// 		{
+// 			printf("%c", global->mlx_data.map.data[j + i * global->mlx_data.map.width]);
+// 		}
+// 		printf("\n");
+// 	}
+// }
 
 
 void		map_create(char *str, int file, t_global *global)
@@ -84,7 +84,7 @@ void		map_create(char *str, int file, t_global *global)
 	count_node(list, global);
 	make_array_map(list, global);
 	
-	print_map(global);
+	//print_map(global);
 	
 	free_list_map(list);
 }

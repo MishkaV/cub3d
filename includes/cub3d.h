@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:25:26 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 21:33:15 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 22:05:03 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ typedef struct  s_global
     t_player    player;
 }               t_global;
 
-
+# include "key.h"
 # include "list.h"
 # include "../gnl/get_next_line.h" 
 # include "errors.h"
@@ -103,4 +103,5 @@ typedef struct  s_global
 # include "floor_ceil.h"
 # include "inits.h"
 # include "load_texture.h"
+# include "press_key.h"
 #endif
