@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:48:41 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:51:58 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/05 22:01:48 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int     check_num(char *str)
         return (1);
     return (0);
 }
-
 
 void    create_res(char *str,  t_global *global)
 {

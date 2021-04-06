@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:01:09 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/05 21:40:43 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/06 10:13:25 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,18 @@ void        init_global(t_global *global)
 {
     global->mlx_data.width = -1;
     global->mlx_data.height = -1;
+    
     global->scene.color_ceil = -1;
     global->scene.color_floor = -1;
     global->scene.path_east.directory = 0;
     global->scene.path_north.directory = 0;
     global->scene.path_south.directory = 0;
     global->scene.path_west.directory = 0;
-    global->scene.path_sprite.directory = 0;   
+    global->scene.path_sprite.directory = 0;
+    
+	global->mlx_data.map.data = 0;
+	global->mlx_data.map.height = 0;
+	global->mlx_data.map.width = 0; 
 }
 
 int			main(int argc, char **argv)
