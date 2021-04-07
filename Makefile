@@ -6,7 +6,7 @@
 #    By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 16:05:20 by jbenjy            #+#    #+#              #
-#    Updated: 2021/04/06 22:07:15 by jbenjy           ###   ########.fr        #
+#    Updated: 2021/04/07 10:49:35 by jbenjy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRCS			= $(DIR_SRCS)cub3d.c \
 				$(DIR_SCENE)color.c \
 				$(DIR_LIST)list.c \
 				$(DIR_RAY)floor_ceil.c \
+				$(DIR_RAY)throw_ray.c \
 				$(DIR_GNL)get_next_line.c \
 				$(DIR_GNL)get_next_line_utils.c \
 				$(DIR_UTILS)errors.c

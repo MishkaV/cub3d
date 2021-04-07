@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:00:28 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 21:25:03 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/07 10:56:40 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ void        		init_player(t_global *global)
 	global->player.x_pos = -1;
 	global->player.y_pos = -1;
 	
-	while(i < global->mlx_data.map.width)
+	while(i < global->mlx_data.map.height)
 	{
 		j = 0;
-		while (j < global->mlx_data.map.height)
+		while (j < global->mlx_data.map.width)
 		{
 			c = global->mlx_data.map.data[j + i * global->mlx_data.map.width];
 			if(check_player_sym(c))

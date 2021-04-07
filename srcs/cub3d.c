@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:01:09 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 22:22:18 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/07 10:35:12 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void        init_mlx_data(t_global *global)
     
     x = global->mlx_data.width;
     y = global->mlx_data.height;
+    
     if (!(global->mlx_data.mlx = mlx_init()))
         error_handle(ERROR_MLX_AL, global);
         
@@ -50,10 +51,7 @@ int			main(int argc, char **argv)
     init_texture(&global);
     init_main_image(&global);
     
-    floor_paint(&global);
-    ceil_paint(&global);
-    
-    mlx_put_image_to_window(global.mlx_data.mlx, global.mlx_data.window, global.main_image.ptr, 0, 0);
+    press_key(-5, &global);
     
     mlx_hook(global.mlx_data.window, 2, 1, press_key, &global);
     mlx_hook(global.mlx_data.window, 17, 0, press_close, &global);

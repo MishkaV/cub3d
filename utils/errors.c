@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:07:05 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/06 22:16:54 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/07 10:23:46 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,9 @@ void		free_arguments(t_global *global)
 	
 	if (global->mlx_data.map.data)
 		free(global->mlx_data.map.data);
-	
+		
+	// if (global->scene.path_east.ptr)
+	// 	free(global->mlx_data.map.data);
 }
 
 void		error_handle(int error, t_global *global)
