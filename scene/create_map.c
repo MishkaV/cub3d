@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 21:48:41 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/23 15:37:08 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/26 22:28:06 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,15 @@ void	map_create(char *str, int file, t_global *global)
 		map_file = get_next_line(file, &str);
 		while (map_file > 0)
 		{
+			free (str);
 			if (*str != '\n' && *str != '\0')
 			{
-				free (str);
 				error_handle(ERROR_MAP, global);
 			}
 			str = 0;
 			map_file = get_next_line(file, &str);
-		}	
+		}
 	}
 	map_create_more(global, list);
+	// free_list_map(list);
 }

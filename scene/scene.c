@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 12:01:30 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/23 15:44:42 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/26 22:01:53 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ void	scene_create(char *file, t_global *global)
 	finish(gnl, global, line);
 	if (*line != '\0' && *line != '1' && *line != ' ')
 		error_handle(ERROR_MAP, global);
+	free(line);
 	line = trim_file(map_file, global);
 	map_create(line, map_file, global);
+	free(line);
+	close(map_file);
 	scene_create_more(global);
 }

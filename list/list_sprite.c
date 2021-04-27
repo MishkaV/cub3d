@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 19:40:43 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/22 16:59:52 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/24 21:17:21 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	free_list_sprite(t_list_sprite *root)
 	t_list_sprite	*next;
 
 	next = root;
-	while (next)
+	while (root)
 	{
 		next = root->next;
 		free(root);

@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:32:25 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/22 20:22:53 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/24 21:08:44 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ static void	paint_sprite_more(t_global *global, int len_list)
 		paint(global, &variable);
 		i++;
 	}
+	free(list);
+	free(range);
 }
 
 static void	paint_sprite(t_global *global)

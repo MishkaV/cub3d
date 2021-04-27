@@ -6,7 +6,7 @@
 /*   By: jbenjy <jbenjy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 22:48:24 by jbenjy            #+#    #+#             */
-/*   Updated: 2021/04/22 17:08:23 by jbenjy           ###   ########.fr       */
+/*   Updated: 2021/04/26 22:32:56 by jbenjy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list_map	*new_node_map(char *data)
 	t_list_map	*node;
 
 	node = malloc(sizeof(t_list_map));
-	node->data = data;
+	node->data = ft_strdup(data);
 	node->next = 0;
 	return (node);
 }
@@ -43,9 +43,10 @@ void	free_list_map(t_list_map *root)
 	t_list_map	*next;
 
 	next = root;
-	while (next)
+	while (root)
 	{
 		next = root->next;
+		free(root->data);
 		free(root);
 		root = next;
 	}
